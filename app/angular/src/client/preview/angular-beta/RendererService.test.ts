@@ -153,6 +153,29 @@ describe('RendererService', () => {
         });
         expect(countDestroy).toEqual(1);
       });
+
+      it("should be re-rendered when renderMode='full'", async () => {
+        let countDestroy = 0;
+
+        rendererService.platform.onDestroy(() => {
+          countDestroy += 1;
+        });
+        // only props change
+        await rendererService.render({
+          storyFnAngular: {
+            template: '{{ logo }}: {{ name }}',
+            props: {
+              logo: '🦊',
+              name: 'Fox',
+            },
+            renderMode: 'full',
+          },
+          forced: true,
+          parameters: {} as any,
+        });
+
+        expect(countDestroy).toEqual(1);
+      });
     });
 
     it('should properly destroy angular platform between each render', async () => {

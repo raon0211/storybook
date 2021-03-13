@@ -50,10 +50,10 @@ class ComponentFactoryWrapperComponent implements AfterViewInit {
   }
 }
 
-// Live changing of args by controls does not work at the moment. When changing args storybook does not fully
-// reload and therefore does not take into account the change of provider.
 export const WithComponentFactoryResolver: Story = (args) => ({
   props: args,
+  // Require a complete rendering to take into account the args change by controls addon.
+  renderMode: 'full',
 });
 WithComponentFactoryResolver.storyName = 'Custom wrapper ComponentFactoryResolver';
 WithComponentFactoryResolver.argTypes = {

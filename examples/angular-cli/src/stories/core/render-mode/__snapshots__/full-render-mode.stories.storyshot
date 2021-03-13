@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Core / Render Mode with "full" render mode 1`] = `
+<storybook-wrapper>
+  <foo-fn
+    ng-reflect-desc="
+        With renderMode=full th"
+  >
+    <p>
+      
+        With renderMode=full the story is fully rendered at each change. 
+      <br />
+      
+        It is preferable not to use this mode by default, because it loses performance if controls only change Input/Output of the component or template
+      
+    </p>
+    <h3>
+      Foo: 
+    </h3>
+  </foo-fn>
+</storybook-wrapper>
+`;
+
+exports[`Storyshots Core / Render Mode with "full" render mode in decorator 1`] = `
+<storybook-wrapper>
+  <foo-fn
+    ng-reflect-desc="
+        With renderMode=full by"
+  >
+    <p>
+      
+        With renderMode=full by decorator. 
+      <br />
+      
+        It is possible to optimize and add this rendering mode only if the value changes
+      
+    </p>
+    <h3>
+      Foo: Foo in en
+    </h3>
+  </foo-fn>
+</storybook-wrapper>
+`;
+
+exports[`Storyshots Core / Render Mode with default render mode 1`] = `
+<storybook-wrapper>
+  <foo-fn
+    ng-reflect-desc="The change of value by the foo"
+  >
+    <p>
+      The change of value by the foo control does not trigger a complete story rendering because it's in a function
+    </p>
+    <h3>
+      Foo: 
+    </h3>
+  </foo-fn>
+</storybook-wrapper>
+`;

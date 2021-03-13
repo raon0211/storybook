@@ -13,8 +13,6 @@ export default {
 
 export const SimpleComponent: Story = () => ({});
 
-// Live changing of args by controls does not work for now. When changing args storybook does not fully
-// reload and therefore does not take into account the change of provider.
 export const WithInjectionTokenAndArgs: Story = (args) => ({
   props: args,
   moduleMetadata: {

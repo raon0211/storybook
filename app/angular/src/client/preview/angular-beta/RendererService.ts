@@ -125,6 +125,7 @@ export class RendererService {
     moduleMetadata: NgModule;
     forced: boolean;
   }) {
+    const { renderMode } = storyFnAngular;
     const { currentStoryRender: lastStoryRender } = this;
 
     this.currentStoryRender = {
@@ -133,6 +134,8 @@ export class RendererService {
     };
 
     if (
+      // if renderMode requires full rendering
+      (renderMode && renderMode === 'full') ||
       // check `forceRender` of story RenderContext
       !forced ||
       // if it's the first rendering and storyProps$ is not init
